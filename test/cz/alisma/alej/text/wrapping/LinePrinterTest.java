@@ -35,17 +35,17 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class LinePrinterTest {
-	private static class TestingAligner implements Aligner {
+	private static class TestingAlignerInput implements Aligner {
 	    private List<List<String>> expected = new LinkedList<>();
 	    
-	    public TestingAligner(String[][] lines) {
+	    public TestingAlignerInput(String[][] lines) {
             for (String[] line : lines) {
                 expected.add(Arrays.asList(line));
             }
         }
 	    
         @Override
-        public String format(List<String> words) {
+        public String format(List<String> words, int width) {
             assertFalse(expected.isEmpty());
             List<String> exp = expected.remove(0);
             assertEquals(exp, words);
@@ -68,7 +68,7 @@ public class LinePrinterTest {
 	
 	@Test
 	public void exactWidth() {
-	    Aligner aligner = new TestingAligner(new String[][] {
+	    Aligner aligner = new TestingAlignerInput(new String[][] {
 	       new String[] { "0123456789" },
 	       new String[] { "1234567890" },
 	       new String[] { "2345678901" },
@@ -82,7 +82,7 @@ public class LinePrinterTest {
 	
 	@Test
 	public void twoWords() {
-	    Aligner aligner = new TestingAligner(new String[][] {
+	    Aligner aligner = new TestingAlignerInput(new String[][] {
            new String[] { "01234", "56789" },
            new String[] { "12345", "67890" },
         });
@@ -96,7 +96,7 @@ public class LinePrinterTest {
 	
 	@Test
 	public void genericCase() {
-	    Aligner aligner = new TestingAligner(new String[][] {
+	    Aligner aligner = new TestingAlignerInput(new String[][] {
            new String[] { "01234", "567" },
            new String[] { "12345", "6", "8" },
            new String[] { "901", "23" },

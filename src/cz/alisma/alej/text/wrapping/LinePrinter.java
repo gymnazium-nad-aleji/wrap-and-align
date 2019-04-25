@@ -30,10 +30,10 @@ import java.util.List;
 
 /** Wraps printed lines. */
 public class LinePrinter {
-    private int width;
-    private PrintStream output;
-    private Aligner aligner;
-    private List<String> words;
+    int width;
+    PrintStream output;
+    Aligner aligner;
+    List<String> words;
 
     /** Constructor.
      * 
@@ -63,7 +63,7 @@ public class LinePrinter {
         
         for (String word : words) {
             if (lengthSoFar + 1 + word.length() > width) {
-                output.println(aligner.format(line));
+                output.println(aligner.format(line, width));
                 line.clear();
                 lengthSoFar = -1;
             } else {
@@ -74,7 +74,7 @@ public class LinePrinter {
         }
         
         if (!line.isEmpty()) {
-            output.println(aligner.format(line));
+            output.println(aligner.format(line, width));
         }
     }
 

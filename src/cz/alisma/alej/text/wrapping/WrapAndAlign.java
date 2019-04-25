@@ -27,22 +27,40 @@ package cz.alisma.alej.text.wrapping;
 import java.util.Scanner;
 
 public class WrapAndAlign {
-    private static final int MAX_WIDTH = 50;
 
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        ParagraphDetector pd = new ParagraphDetector(input);
-        Aligner aligner = new LeftAligner();
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		Aligner aligner = new LeftAligner();
+		int maxWidth = 60;
+    	while (input.hasNext()) {
+    		String command = input.next();
+    		
+    		if (command == "--right") {
+    			aligner = new RightAligner();
+    		}
+    		else if (command == "--centre" || command == "--center") {
+    			aligner = new CentreAligner();
+    		}
+    		else if (command == "--justify") {
+    			aligner = new JustifyAligner();
+    		}
+    		
+    		if (command == "-w") {
+    			maxWidth = input.next().toString();
+    		}
+    	}
 
-        while (pd.hasNextParagraph()) {
-            Paragraph para = pd.nextParagraph();
-            LinePrinter line = new LinePrinter(System.out, MAX_WIDTH, aligner);
-            while (para.hasNextWord()) {
-                String word = para.nextWord();
-                line.addWord(word);
-            }
-            line.flush();
-            System.out.println();
-        }
-    }
+		ParagraphDetector pd = new ParagraphDetector(input);
+		
+		while (pd.hasNextParagraph()) {
+			Paragraph para = pd.nextParagraph();
+			LinePrinter line = new LinePrinter(System.out, maxWidth, aligner);
+			while (para.hasNextWord()) {
+				String word = para.nextWord();
+				line.addWord(word);
+			}
+			line.flush();
+			System.out.println();
+		}
+	}
 }
