@@ -1,3 +1,4 @@
-# Wrap and align
+# Pololetka-zarovnani
 
-Example application for wrapping and aligning plain text.
+forked from gymnazium-nad-aleji/wrap-and-align
+with some new features
