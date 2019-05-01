@@ -23,7 +23,7 @@ public class JustifyAligner implements Aligner {
                 	preResult.append(" ");
                 	plusSpaces -= 1;
                 }
-                for (int i = 0; i < numberOfSpaces; i) {
+                for (int i = 0; i < numberOfSpaces; i++) {
                 	preResult.append(" ");
                 }
             } else {

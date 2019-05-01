@@ -46,7 +46,7 @@ public class WrapAndAlign {
     		}
     		
     		if (command == "-w") {
-    			maxWidth = input.next().toString();
+    			maxWidth = Integer.parseInt(input.next());
     		}
     	}
 
