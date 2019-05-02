@@ -36,7 +36,7 @@ public class AlignerTest {
 		assertEquals(aligner.format(Arrays.asList(testString.split(" ")), 40), goodString);
 		
 	}
-	*/
+	
 	
 	@Test
 	public void JustifyAlignedTest() {
@@ -46,5 +46,6 @@ public class AlignerTest {
 		
 		assertEquals(aligner.format(Arrays.asList(testString.split(" ")), 40), goodString);
 	}
+	*/
 	
 }
