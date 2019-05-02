@@ -1,10 +1,10 @@
 
 package cz.alisma.alej.text.wrapping;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
+//import org.junit.Test;
+//import static org.junit.Assert.*;
 
-import java.util.Arrays;
+//import java.util.Arrays;
 
 public class AlignerTest {
 	
