@@ -10,7 +10,7 @@ public class AlignerTest {
 	
 	
 	@Test
-	public void LeftAlignerTest() {
+	public void leftAlignerTest() {
 		Aligner aligner = new LeftAligner();
 		String testString = "This should be left-aligned.";
 		String goodString = "This should be left-aligned.            ";
@@ -19,7 +19,7 @@ public class AlignerTest {
 	}
 	
 	@Test
-	public void RightAlignerTest() {
+	public void rightAlignerTest() {
 		Aligner aligner = new RightAligner();
 		String testString = "This should be right-aligned.";
 		String goodString = "           This should be right-aligned.";
@@ -28,10 +28,10 @@ public class AlignerTest {
 	}
 	
 	@Test
-	public void CentreAlignedTest() {
+	public void centreAlignedTest() {
 		Aligner aligner = new CentreAligner();
-		String testString = "This should be in centre.";
-		String goodString = "        This should be in centre.       ";
+		String testString = "This should be in the centre.";
+		String goodString = "      This should be in the centre.     ";
 		
 		assertEquals(aligner.format(Arrays.asList(testString.split(" ")), 40), goodString);
 		
@@ -39,7 +39,7 @@ public class AlignerTest {
 	
 	
 	@Test
-	public void JustifyAlignedTest() {
+	public void justifyAlignedTest() {
 		Aligner aligner = new JustifyAligner();
 		String testString = "This should be justified.";
 		String goodString = "This      should      be      justified.";
