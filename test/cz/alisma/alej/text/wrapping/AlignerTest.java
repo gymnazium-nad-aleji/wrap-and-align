@@ -8,6 +8,7 @@ import java.util.Arrays;
 
 public class AlignerTest {
 	
+	/*
 	@Test
 	public void LeftAlignerTest() {
 		Aligner aligner = new LeftAligner();
@@ -17,7 +18,6 @@ public class AlignerTest {
 		assertEquals(aligner.format(Arrays.asList(testString.split(" ")), 40), goodString);
 	}
 	
-	/*
 	@Test
 	public void RightAlignerTest() {
 		Aligner aligner = new RightAligner();
@@ -36,6 +36,7 @@ public class AlignerTest {
 		assertEquals(aligner.format(Arrays.asList(testString.split(" ")), 40), goodString);
 		
 	}
+	*/
 	
 	@Test
 	public void JustifyAlignedTest() {
@@ -45,6 +46,5 @@ public class AlignerTest {
 		
 		assertEquals(aligner.format(Arrays.asList(testString.split(" ")), 40), goodString);
 	}
-	*/
 	
 }
