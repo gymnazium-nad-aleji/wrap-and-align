@@ -1,0 +1,20 @@
+image: java:8
+
+default:
+  before_script:
+    - apt-get update
+    - apt install -y ant
+    - ant -version
+    - java -version
+    - javac -version
+     
+
+example:
+  script:
+    - ant
+    - java -jar out/jars/app.jar -w 20 --center <LICENSE
+
+junit:
+  script:
+    - ant
+    - ant test
