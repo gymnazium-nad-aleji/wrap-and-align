@@ -113,4 +113,19 @@ public class LinePrinterTest {
         printer.addWord("456789012");
         printer.flush();
 	}
+	
+	@Test
+	public void offByOneErrors() {
+	    Aligner aligner = new TestingAligner(new String[][] {
+           new String[] { "01234", "5678" },
+           new String[] { "12345" },
+           new String[] { "67890" },
+        });
+	    LinePrinter printer = new LinePrinter(nullOutput, 10, aligner);
+        printer.addWord("01234");
+        printer.addWord("5678");
+        printer.addWord("12345");
+        printer.addWord("67890");
+        printer.flush();
+	}
 }
